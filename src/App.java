@@ -1,28 +1,10 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.event.ActionEvent;
-
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextArea;
-
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -30,6 +12,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+
+import java.io.*;
 
 public class App extends Application{
     String user = "JavaFX2";
@@ -102,7 +86,7 @@ public class App extends Application{
 
                 Save.setOnAction(ActionEvent->{
                     FileChooser fileChooser = new FileChooser();
-                    // FileChooser.ExtensionFilter ext = new FileChooser.ExtensionFilter("txt files","*.txt" );
+                     FileChooser.ExtensionFilter ext = new FileChooser.ExtensionFilter("txt files","*.txt" );
                     File saveFile = fileChooser.showSaveDialog(null);
                     try {
                         FileWriter fw = new FileWriter(saveFile);
